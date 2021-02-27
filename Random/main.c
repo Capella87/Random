@@ -20,16 +20,18 @@ Initial version release date : Feb 22, 2018
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
-#include <Windows.h>
+#include <stdbool.h>
 
-#define WAIT_DEFAULT    1
-#define YEAR            2021
-#define VERSION         "1.1.1"
-#define RELEASE_DATE    "Feb 17, 2021"
+#include "cui.h"
+
+#define WINDOWS_X64
+
+#ifdef WINDOWS_X64
+#include <Windows.h>
+#endif
 
 int calc(int);
 void wait(int);
-void design(void);
 
 int main(int argc, char** argv)
 {
@@ -37,7 +39,7 @@ int main(int argc, char** argv)
 	int result;
 	int ask;
 
-	design();
+	intro();
 start:
 	puts("Type a maximum number: ");
     printf(">> ");
@@ -90,15 +92,4 @@ void wait(int sec)
 	clock_t endwait;
 	endwait = clock() + sec * CLOCKS_PER_SEC;
 	while (clock() < endwait);
-}
-
-void design(void)
-{
-	puts("Random");
-	printf("Developed by Capella87.\n");
-	printf("%s | %s\n", VERSION, RELEASE_DATE);
-	printf("Copyright (c) 2018-%d Capella87\n", YEAR);
-    puts("This software is distributed under MIT License. See LICENCE at the root directory for more details.");
-    puts("https://github.com/Capella87/Random");
-	puts("---------------------------------------------\n");
 }
