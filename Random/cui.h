@@ -17,5 +17,7 @@
 #define RELEASE_DATE    "Feb 17, 2021"
 
 void intro(void);
+void showVersion(void);
+void showHelp(void);
 
 #endif

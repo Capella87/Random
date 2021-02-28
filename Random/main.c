@@ -18,6 +18,7 @@ Initial version release date : Feb 22, 2018
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #include <time.h>
 #include <stdbool.h>
@@ -35,6 +36,17 @@ void wait(int);
 
 int main(int argc, char** argv)
 {
+
+    if (argc == 2 && (strcmp(argv[1], "--version") == 0 || strcmp(argv[1], "-v") == 0))
+    {
+        showVersion();
+        exit(EXIT_SUCCESS);
+    }
+    else if (argc == 2 && strcmp(argv[1], "--help") == 0)
+    {
+        showHelp();
+        exit(EXIT_SUCCESS);
+    }
 	int input_no;
 	int result;
 	int ask;
