@@ -11,7 +11,7 @@
 #define __CUI_H__
 #include <stdbool.h>
 
-#define WAIT_DEFAULT    1
+#define WAIT_DEFAULT    0
 #define YEAR            2021
 #define VERSION         "1.1.1"
 #define RELEASE_DATE    "Feb 17, 2021"
