@@ -24,15 +24,13 @@ Initial version release date : Feb 22, 2018
 #include <stdbool.h>
 
 #include "cui.h"
+#include "core.h"
 
 #define WINDOWS_X64
 
 #ifdef WINDOWS_X64
 #include <Windows.h>
 #endif
-
-int calc(int);
-void wait(int);
 
 int main(int argc, char** argv)
 {
@@ -47,25 +45,32 @@ int main(int argc, char** argv)
         showHelp();
         exit(EXIT_SUCCESS);
     }
-	int input_no;
-	int result;
-	int ask;
+	int max;
+    int ask, num;
 
 	intro();
 start:
 	puts("Type a maximum number: ");
     printf(">> ");
-    while (scanf("%d", &input_no) != 1 || input_no == 0)
+    while (scanf("%d", &max) != 1 || max == 0)
     {
         while (getchar() != '\n')
             continue;
-        printf("ERROR! Type only a natural number!\n");
+        printf("ERROR! Type only a natural number!\n\a");
         printf(">> ");
     }
-
-	result = calc(input_no);
-	printf("Result : %d between 0 to %d\n\a\n", result, input_no);
-	puts("Want to try again ?");
+    puts("How many randomized numbers?: ");
+    printf(">> ");
+    while (scanf("%d", &num) != 1)
+    {
+        while (getchar() != '\n')
+            continue;
+        printf("ERROR! Type correct number!\n\a");
+        printf(">> ");
+    }
+    countdown(WAIT_DEFAULT);
+    calcRand(max, num); // It will be changed when other random algorithms are introduced.
+	puts("Want to try again ?\a");
 	printf("1 : Restart | 2 : EXIT\n");
 	printf(">> ");
 	scanf("%d", &ask);
@@ -81,27 +86,7 @@ start:
 			break;
 	}
     printf("Bye\n");
+
 	return 0;
 }
 
-int calc(int input)
-{
-	for (int n = WAIT_DEFAULT; n > 0; n--)
-	{
-        printf("Wait... ");
-		printf("%d ", n);
-		wait(1);
-	}
-	printf("0\n");
-	srand((unsigned int)time(NULL));
-	int output = rand() % input + 1;
-
-	return output;
-}
-
-void wait(int sec)
-{
-	clock_t endwait;
-	endwait = clock() + sec * CLOCKS_PER_SEC;
-	while (clock() < endwait);
-}
