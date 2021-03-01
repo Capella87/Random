@@ -18,9 +18,6 @@ Initial version release date : Feb 22, 2018
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <time.h>
 #include <stdbool.h>
 
 #include "cui.h"
@@ -46,47 +43,47 @@ int main(int argc, char** argv)
         exit(EXIT_SUCCESS);
     }
 	int max;
-    int ask, num;
+    int answer, num;
 
 	intro();
-start:
-	puts("Type a maximum number: ");
-    printf(">> ");
-    while (scanf("%d", &max) != 1 || max == 0)
+    while (1)
     {
-        while (getchar() != '\n')
-            continue;
-        printf("ERROR! Type only a natural number!\n\a");
+        puts("Type a maximum number: ");
         printf(">> ");
-    }
-    puts("How many randomized numbers?: ");
-    printf(">> ");
-    while (scanf("%d", &num) != 1)
-    {
-        while (getchar() != '\n')
-            continue;
-        printf("ERROR! Type correct number!\n\a");
+        while (scanf("%d", &max) != 1 || max == 0)
+        {
+            while (getchar() != '\n')
+                continue;
+            printf("ERROR! Type only a natural number!\n\a");
+            printf(">> ");
+        }
+
+        puts("How many randomized numbers?: ");
         printf(">> ");
+        while (scanf("%d", &num) != 1)
+        {
+            while (getchar() != '\n')
+                continue;
+            printf("ERROR! Type correct number!\n\a");
+            printf(">> ");
+        }
+        countdown(WAIT_DEFAULT);
+        calcRand(max, num); // It will be changed when other random algorithms are introduced.
+        puts("Do you want to try again ?\a");
+        printf("Type 0 to EXIT\n");
+        printf(">> ");
+        while (scanf("%d", &answer) != 1)
+        {
+            while (getchar() != '\n')
+                continue;
+            printf("ERROR! Please type a correct answer!\n");
+            printf("> ");
+        }
+        if (answer == 0) break;
     }
-    countdown(WAIT_DEFAULT);
-    calcRand(max, num); // It will be changed when other random algorithms are introduced.
-	puts("Want to try again ?\a");
-	printf("1 : Restart | 2 : EXIT\n");
-	printf(">> ");
-	scanf("%d", &ask);
 
-	switch (ask)
-	{
-		case 1 :
-			printf("Restart.\n");
-			system("cls");
-			goto start;
-			break;
-        default:
-			break;
-	}
-    printf("Bye\n");
 
+    printf("Bye\n\a");
 	return 0;
 }
 
