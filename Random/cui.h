@@ -16,8 +16,11 @@
 #define VERSION         "1.1.1"
 #define RELEASE_DATE    "Feb 17, 2021"
 
+typedef int Digit;
+
 void intro(void);
 void showVersion(void);
 void showHelp(void);
+Digit alignment(int);
 
 #endif

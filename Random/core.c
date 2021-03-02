@@ -2,10 +2,14 @@
 #include <time.h>
 #include <stdlib.h>
 #include "core.h"
+#include "cui.h"
 
+// Using old school random algorithm embedded in C library
 int calcRand(int input, int iteration)
 {
     int output;
+    Digit digit = alignment(input);
+    Digit iterDigit = alignment(iteration);
 
     if (iteration == 0) return -1;
     srand((unsigned int)time(NULL));
@@ -13,8 +17,9 @@ int calcRand(int input, int iteration)
     for (int i = 1; i <= iteration; i++)
     {
         output = rand() % input + 1;
-        printf("%d ", output);
-        if (i % 10 == 0) putchar('\n');
+        printf("%*d ", digit, output);
+        if (i % 10 == 0)
+            printf("   | %0*d\n", iterDigit, i);
     }
     putchar('\n');
 
@@ -40,7 +45,6 @@ int countdown(int time)
         wait(time);
     }
     printf("0\n");
-
 
     return 0;
 }
