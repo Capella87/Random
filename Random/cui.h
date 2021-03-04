@@ -13,8 +13,8 @@
 
 #define WAIT_DEFAULT    0
 #define YEAR            2021
-#define VERSION         "1.1.1"
-#define RELEASE_DATE    "Feb 17, 2021"
+#define VERSION         "1.2"
+#define RELEASE_DATE    "Mar 4, 2021"
 
 typedef int Digit;
 

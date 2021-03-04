@@ -8,8 +8,8 @@ Developed by Capella87
 
 Copyright (c) 2018-2021 Capella87
 
-Random version : 1.1.1
-Release date : Feb 17, 2021
+Random version : 1.2
+Release date : Mar 3, 2021
 First commit date : Feb 24, 2018
 Initial version release date : Feb 22, 2018
 
