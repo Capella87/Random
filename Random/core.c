@@ -48,3 +48,15 @@ int countdown(int time)
 
     return 0;
 }
+
+uint64_t calcXor64(uint64_t* input)
+{
+    uint64_t seed = *input;
+    
+    seed ^= seed << 13;
+    seed ^= seed >> 7;
+    seed ^= seed << 17;
+    *input = seed;
+
+    return seed;
+}
