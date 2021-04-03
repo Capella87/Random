@@ -19,14 +19,16 @@ Initial version release date : Feb 22, 2018
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 #include "cui.h"
 #include "core.h"
 
-#define WINDOWS_X64
-
-#ifdef WINDOWS_X64
+#ifndef _WIN32
 #include <Windows.h>
+#elif __linux__
+
+#elif __APPLE__
 #endif
 
 int main(int argc, char** argv)

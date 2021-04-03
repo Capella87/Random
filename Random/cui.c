@@ -19,13 +19,14 @@ void intro(void)
 void showVersion(void)
 {
     printf("Random version %s (%s)\n", VERSION, RELEASE_DATE);
+    puts("https://github.com/Capella87/Random");
 }
 
 void showHelp(void)
 {
     printf("Random version %s (%s)\n", VERSION, RELEASE_DATE);
     printf("Copyright (c) 2018-%d Capella87.\n", YEAR);
-    printf("https://github.com/Capella87/Random\n\n");
+    printf("https://github.com/Capella87/Random \n\n");
     
     printf("usage: random [<command>] [<options>]\n");
 }
