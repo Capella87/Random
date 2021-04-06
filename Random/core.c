@@ -5,10 +5,10 @@
 #include "cui.h"
 
 // Using old school random algorithm embedded in C library
-int calcRand(int input, int iteration)
+int calcRand(int min, int max, int iteration)
 {
     int output;
-    Digit digit = alignment(input);
+    Digit digit = alignment(max);
     Digit iterDigit = alignment(iteration);
 
     if (iteration == 0) return -1;
@@ -16,7 +16,7 @@ int calcRand(int input, int iteration)
 
     for (int i = 1; i <= iteration; i++)
     {
-        output = rand() % input + 1;
+        output = rand() % (max + 1 - min) + min;
         printf("%*d ", digit, output);
         if (i % 10 == 0)
             printf("   | %0*d\n", iterDigit, i);

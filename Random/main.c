@@ -44,20 +44,28 @@ int main(int argc, char** argv)
         showHelp();
         exit(EXIT_SUCCESS);
     }
-	int max;
+	int max, min;
     int answer, num;
 
 	intro();
     while (1)
     {
-        puts("Type a maximum number: ");
-        printf(">> ");
+        puts("Type number range: ");
+        printf("From >> ");
+        while (scanf("%d", &min) != 1 || min == 0)
+        {
+            while (getchar() != '\n')
+                continue;
+            printf("ERROR! Type only a natural number!\n\a");
+            printf("From >> ");
+        }
+        printf("To >> ");
         while (scanf("%d", &max) != 1 || max == 0)
         {
             while (getchar() != '\n')
                 continue;
             printf("ERROR! Type only a natural number!\n\a");
-            printf(">> ");
+            printf("To >> ");
         }
 
         puts("How many randomized numbers?: ");
@@ -70,7 +78,7 @@ int main(int argc, char** argv)
             printf(">> ");
         }
         countdown(WAIT_DEFAULT);
-        calcRand(max, num); // It will be changed when other random algorithms are introduced.
+        calcRand(min, max, num); // It will be changed when other random algorithms are introduced.
         puts("Do you want to try again ?\a");
         printf("Type 0 to EXIT\n");
         printf(">> ");

@@ -11,7 +11,7 @@
 #define __CORE_H__
 #include <stdbool.h>
 
-int calcRand(int input, int iteration);
+int calcRand(int min, int max, int iteration);
 int countdown(int time);
 void wait(int sec);
 
