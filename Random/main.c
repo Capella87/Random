@@ -24,7 +24,7 @@ Initial version release date : Feb 22, 2018
 #include "cui.h"
 #include "core.h"
 
-#ifndef _WIN32
+#ifdef _WIN32
 #include <Windows.h>
 #elif __linux__
 
