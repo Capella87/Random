@@ -12,6 +12,12 @@ int calcRand(int min, int max, int iteration)
     Digit iterDigit = alignment(iteration);
 
     if (iteration == 0) return -1;
+    if (max > RAND_MAX)
+    {
+        max = RAND_MAX;
+        printf("Caution: The number you entered was bigger than %d; Reset the maximum to %d.\n\n", RAND_MAX, RAND_MAX);
+    }
+
     srand((unsigned int)time(NULL));
 
     for (int i = 1; i <= iteration; i++)
