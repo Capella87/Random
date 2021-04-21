@@ -18,9 +18,13 @@
 
 typedef int Digit;
 
+int noArgExecution(void);
+
 void intro(void);
 void showVersion(void);
 void showHelp(void);
 Digit alignment(int);
+
+
 
 #endif

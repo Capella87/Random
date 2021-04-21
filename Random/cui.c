@@ -4,6 +4,62 @@
 #include <math.h>
 #include <stdlib.h>
 #include "cui.h"
+#include "core.h"
+
+int noArgExecution(void)
+{
+    int max, min;
+    int answer, num;
+
+    intro();
+    while (1)
+    {
+        puts("Type number range: ");
+        printf("From >> ");
+        while (scanf("%d", &min) != 1 || min == 0)
+        {
+            while (getchar() != '\n')
+                continue;
+            printf("ERROR! Type only a natural number!\n\a");
+            printf("From >> ");
+        }
+        printf("To >> ");
+        while (scanf("%d", &max) != 1 || max == 0)
+        {
+            while (getchar() != '\n')
+                continue;
+            printf("ERROR! Type only a natural number!\n\a");
+            printf("To >> ");
+        }
+
+        puts("How many randomized numbers?: ");
+        printf(">> ");
+        while (scanf("%d", &num) != 1)
+        {
+            while (getchar() != '\n')
+                continue;
+            printf("ERROR! Type correct number!\n\a");
+            printf(">> ");
+        }
+        countdown(WAIT_DEFAULT);
+        calcRand(min, max, num); // It will be changed when other random algorithms are introduced.
+        puts("Do you want to try again ?\a");
+        printf("Type 0 to EXIT\n");
+        printf(">> ");
+        while (scanf("%d", &answer) != 1)
+        {
+            while (getchar() != '\n')
+                continue;
+            printf("ERROR! Please type a correct answer!\n");
+            printf("> ");
+        }
+        if (answer == 0) break;
+    }
+
+
+    printf("Bye\n\a");
+    return 0;
+}
 
 void intro(void)
 {
