@@ -56,7 +56,6 @@ int noArgExecution(void)
         if (answer == 0) break;
     }
 
-
     printf("Bye\n\a");
     return 0;
 }
@@ -84,7 +83,12 @@ void showHelp(void)
     printf("Copyright (c) 2018-%d Capella87.\n", YEAR);
     printf("https://github.com/Capella87/Random \n\n");
     
-    printf("usage: random [<command>] [<options>]\n");
+    printf("usage: random <command> [<options>]\n\n");
+    puts("Commands");
+    puts("    generate\t\tGenerate random numbers. You can use option for conditions");
+    puts("    config\t\tAdjust configurations");
+
+    puts("\n\n\n");
 }
 
 Digit alignment(int max)
