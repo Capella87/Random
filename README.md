@@ -16,6 +16,13 @@ That's done!
 ## Platforms
 Currently only support Windows. I will port this program to Linux no later than the end of 2021.
 
+## Commands
+```
+> Random <command> [<options>]
+```
+* generate      : Generate random numbers.
+
+
 ## Features
 * Generate random number with range what ever you want
 * Offer argument options for quick results.
