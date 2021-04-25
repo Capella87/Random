@@ -16,11 +16,11 @@ int noArgExecution(void)
     {
         puts("Type number range: ");
         printf("From >> ");
-        while (scanf("%d", &min) != 1 || min == 0)
+        while (scanf("%d", &min) != 1 || min < 0)
         {
             while (getchar() != '\n')
                 continue;
-            printf("ERROR! Type only a natural number!\n\a");
+            printf("ERROR! Type only a natural number or zero!\n\a");
             printf("From >> ");
         }
         printf("To >> ");
