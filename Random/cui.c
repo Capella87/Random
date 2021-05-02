@@ -9,7 +9,8 @@
 int noArgExecution(void)
 {
     int max, min;
-    int answer, num;
+    int num;
+    char iterAnswer[51] = "";
 
     intro();
     while (1)
@@ -41,19 +42,16 @@ int noArgExecution(void)
             printf("ERROR! Type correct number!\n\a");
             printf(">> ");
         }
-        countdown(WAIT_DEFAULT);
+        while (getchar() != '\n')
+            continue;
         calcRand(min, max, num); // It will be changed when other random algorithms are introduced.
         puts("Do you want to try again ?\a");
-        printf("Type 0 to EXIT\n");
+        printf("Type exit to STOP program\n");
         printf(">> ");
-        while (scanf("%d", &answer) != 1)
-        {
-            while (getchar() != '\n')
-                continue;
-            printf("ERROR! Please type a correct answer!\n");
-            printf("> ");
-        }
-        if (answer == 0) break;
+        scanf("%[^\n]", iterAnswer);
+        while (getchar() != '\n')
+            continue;
+        if (!strcmp(iterAnswer, "exit")) break;
     }
 
     printf("Bye\n\a");
