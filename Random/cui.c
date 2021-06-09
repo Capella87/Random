@@ -19,16 +19,14 @@ int noArgExecution(void)
         printf("From >> ");
         while (scanf("%d", &min) != 1 || min < 0)
         {
-            while (getchar() != '\n')
-                continue;
+            bufferFlush();
             printf("ERROR! Type only a natural number or zero!\n\a");
             printf("From >> ");
         }
         printf("To >> ");
         while (scanf("%d", &max) != 1 || max == 0)
         {
-            while (getchar() != '\n')
-                continue;
+            bufferFlush();
             printf("ERROR! Type only a natural number!\n\a");
             printf("To >> ");
         }
@@ -37,20 +35,17 @@ int noArgExecution(void)
         printf(">> ");
         while (scanf("%d", &num) != 1)
         {
-            while (getchar() != '\n')
-                continue;
+            bufferFlush();
             printf("ERROR! Type correct number!\n\a");
             printf(">> ");
         }
-        while (getchar() != '\n')
-            continue;
+        bufferFlush();
         calcRand(min, max, num); // It will be changed when other random algorithms are introduced.
         puts("Do you want to try again ?\a");
         printf("Type exit to STOP program\n");
         printf(">> ");
         scanf("%[^\n]", iterAnswer);
-        while (getchar() != '\n')
-            continue;
+        bufferFlush();
         if (!strcmp(iterAnswer, "exit")) break;
     }
 
@@ -92,4 +87,11 @@ void showHelp(void)
 Digit alignment(int max)
 {
     return (Digit)floor(log10(max) + 1);
+}
+
+// Flush all unneeded leftovers from buffer to prevent next input interference.
+void bufferFlush(void)
+{
+    while (getchar() != '\n')
+        continue;
 }
