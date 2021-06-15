@@ -27,6 +27,9 @@ Currently only support Windows. I will port this program to Linux no later than 
 * Generate random number with range what ever you want
 * Offer argument options for quick results.
 
+## What's next?
+* XORShift support
+
 ## Disclaimer
 This software is under construction. Additional features will be implemented in future.
 
@@ -34,4 +37,4 @@ This software is under construction. Additional features will be implemented in 
 If you have any feature suggestion or discover any error or bug, Please use issue tracker to let me know.
 
 ---
-Last Updated on Apr 18, 2021
+Last Updated on Jun 15, 2021
