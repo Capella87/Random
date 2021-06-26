@@ -19,7 +19,7 @@
 typedef int Digit;
 
 int noArgExecution(void);
-
+void bufferFlush(void);
 void intro(void);
 void showVersion(void);
 void showHelp(void);
