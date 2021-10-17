@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "core.h"
+#include "cui.h"
 
 static void initXor64(Xor64* t)
 {
@@ -41,6 +42,7 @@ bool randXor64(uint64 min, uint64 max, const int count, SortOpt op)
     for (int i = 0; i < count; i++)
         t.result[i] = getXor64Num(&t, min, max);
 
+    printInt64Result(t.result, t.count, max);
     free(t.result);
     return true;
 }

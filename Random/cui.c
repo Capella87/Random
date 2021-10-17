@@ -95,3 +95,18 @@ void bufferFlush(void)
     while (getchar() != '\n')
         continue;
 }
+
+void printInt64Result(uint64* result, const int count, const uint64 max)
+{
+    Digit digit = alignment((uint64)max);
+    Digit iterDigit = alignment((uint64)count);
+
+    for (int i = 0; i < count; i++)
+    {
+        printf("%*llu ", digit, result[i]);
+        if (i % COLCOUNT == 0)
+            printf("   | %0*d\n", iterDigit, i);
+    }
+    putchar('\n');
+    return;
+}

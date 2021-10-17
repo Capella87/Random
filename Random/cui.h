@@ -26,6 +26,7 @@ void intro(void);
 void showVersion(void);
 void showHelp(void);
 Digit alignment(const uint64);
+void printInt64Result(uint64* result, const int count, const uint64 max)
 
 
 #endif

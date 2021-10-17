@@ -20,6 +20,5 @@ static void initXor64(Xor64* t);
 uint64 getXor64(Xor64* t);
 uint64 getXor64Num(Xor64* t, uint64 min, uint64 max);
 bool randXor64(uint64 min, uint64 max, const int count, SortOpt op);
-bool resetXor64Seed(Xor64* t);
 
 #endif
