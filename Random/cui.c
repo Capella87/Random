@@ -32,7 +32,7 @@ int noArgExecution(void)
             printf("Stop > ");
         }
 
-        puts("How many randomized numbers?: ");
+        puts("How many random numbers?: ");
         printf("> ");
         while (scanf("%d", &count) != 1)
         {
@@ -60,7 +60,7 @@ void intro(void)
     printf("Developed by Capella87.\n");
     printf("%s | %s\n", VERSION, RELEASE_DATE);
     printf("Copyright (c) 2018-%d Capella87\n", YEAR);
-    puts("This software is distributed under MIT License. See LICENCE at the root directory for more details.");
+    puts("This software is distributed under MIT License. See LICENSE at the root directory for more details.");
     puts("https://github.com/Capella87/Random");
     puts("---------------------------------------------\n");
 }
