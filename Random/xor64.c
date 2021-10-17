@@ -10,7 +10,9 @@ void initXor64(Xor64* t)
     t->seed = (uint64)time(0) ^ XOR64_OFFSET;
     getXor64(t);
     t->seed ^= (uint64)time(0) << 13;
+    getXor64(t);
     t->seed ^= (uint64)time(0) << 17;
+    getXor64(t);
     t->seed ^= (uint64)time(0) << 5;
     if (!t->seed) t->seed = XOR64_OFFSET;
     return;
@@ -40,7 +42,9 @@ bool randXor64(uint64 min, uint64 max, const int count, SortOpt op)
     t.result = (uint64*)malloc(sizeof(uint64) * count);
     t.count = count;
     for (int i = 0; i < count; i++)
+    {
         t.result[i] = getXor64Num(&t, min, max);
+    }
 
     printInt64Result(t.result, t.count, max);
     free(t.result);

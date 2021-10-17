@@ -5,7 +5,10 @@
 
 typedef enum _sortOptions { sorted, unsorted } SortOpt;
 static const uint64 XOR64_OFFSET = 13726359678912485784UL;
+
 // ref: https://github.com/Bunny83/Utilities/blob/master/XorShift64.cs
+// Original Code Author: Markus Göbel (Bunny83)
+// I ported part of his code to C.
 
 typedef struct _xor64
 {
