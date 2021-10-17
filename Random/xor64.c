@@ -5,7 +5,7 @@
 
 extern const uint64 XOR64_OFFSET;
 
-static void initXor64(Xor64* t)
+void initXor64(Xor64* t)
 {
     t->seed = (uint64)time(0) ^ XOR64_OFFSET;
     getXor64(t);
@@ -29,7 +29,7 @@ uint64 getXor64(Xor64* t)
 uint64 getXor64Num(Xor64* t, uint64 min, uint64 max)
 {
     // min == max == 0 -> no range option
-    return (min == max == 0) ? getXor64(t) : min + getXor64(t) % (max - min);
+    return (!min && !max) ? getXor64(t) : (min + getXor64(t) % (max - min));
 }
 
 bool randXor64(uint64 min, uint64 max, const int count, SortOpt op)

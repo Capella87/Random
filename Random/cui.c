@@ -5,11 +5,12 @@
 #include <stdlib.h>
 #include "cui.h"
 #include "core.h"
+#include "xor.h"
 
 int noArgExecution(void)
 {
-    int max, min;
-    int num;
+    uint64 max, min;
+    int count;
     char iterAnswer[51] = "";
 
     intro();
@@ -17,14 +18,14 @@ int noArgExecution(void)
     {
         puts("Type number range: ");
         printf("From >> ");
-        while (scanf("%d", &min) != 1 || min < 0)
+        while (scanf("%llu", &min) != 1 || min < 0)
         {
             bufferFlush();
             printf("ERROR! Type only a natural number or zero!\n\a");
             printf("From >> ");
         }
         printf("To >> ");
-        while (scanf("%d", &max) != 1 || max == 0)
+        while (scanf("%llu", &max) != 1 || max == 0)
         {
             bufferFlush();
             printf("ERROR! Type only a natural number!\n\a");
@@ -33,14 +34,14 @@ int noArgExecution(void)
 
         puts("How many randomized numbers?: ");
         printf(">> ");
-        while (scanf("%d", &num) != 1)
+        while (scanf("%d", &count) != 1)
         {
             bufferFlush();
             printf("ERROR! Type correct number!\n\a");
             printf(">> ");
         }
         bufferFlush();
-        calcRand(min, max, num); // It will be changed when other random algorithms are introduced.
+        randXor64(min, max, count, unsorted);
         puts("Do you want to try again ?\a");
         printf("Type exit to STOP program\n");
         printf(">> ");
@@ -104,7 +105,7 @@ void printInt64Result(uint64* result, const int count, const uint64 max)
     for (int i = 0; i < count; i++)
     {
         printf("%*llu ", digit, result[i]);
-        if (i % COLCOUNT == 0)
+        if ((i + 1) % COLCOUNT == 0)
             printf("   | %0*d\n", iterDigit, i);
     }
     putchar('\n');
