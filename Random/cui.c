@@ -106,7 +106,7 @@ void printInt64Result(uint64* result, const int count, const uint64 max)
     {
         printf("%*llu ", digit, result[i]);
         if ((i + 1) % COLCOUNT == 0)
-            printf("   | %0*d\n", iterDigit, i);
+            printf("   | %0*d\n", iterDigit, i + 1);
     }
     putchar('\n');
     return;
