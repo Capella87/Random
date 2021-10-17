@@ -1,9 +1,9 @@
-#include "xor.h"
 #include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
-#include "core.h"
-#include "cui.h"
+#include "xor.h"
+
+extern const uint64 XOR64_OFFSET;
 
 static void initXor64(Xor64* t)
 {

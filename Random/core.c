@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "core.h"
 #include "cui.h"
+#include "core.h"
 
 // Using old school random algorithm embedded in C library
 int calcRand(int min, int max, int iteration)

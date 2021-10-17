@@ -15,7 +15,7 @@
 #define YEAR            2021
 #define VERSION         "1.2.1"
 #define RELEASE_DATE    "Apr 22, 2021"
-#define COLCOUNT 10
+#define COLCOUNT        10
 
 typedef int Digit;
 typedef unsigned long long uint64;
@@ -25,8 +25,8 @@ void bufferFlush(void);
 void intro(void);
 void showVersion(void);
 void showHelp(void);
-Digit alignment(const uint64);
-void printInt64Result(uint64* result, const int count, const uint64 max)
+Digit alignment(const uint64 maxNum);
+void printInt64Result(uint64* result, const int count, const uint64 max);
 
 
 #endif

@@ -1,14 +1,12 @@
 #ifndef XOR_H
 #define XOR_H
-#include "core.h"
 #include <stdbool.h>
-typedef long long int64;
-typedef unsigned long long uint64;
-typedef enum _sortOptions { sorted, unsorted } SortOpt;
+#include "cui.h"
 
+typedef enum _sortOptions { sorted, unsorted } SortOpt;
+const uint64 XOR64_OFFSET = 13726359678912485784UL;
 // ref: https://github.com/Bunny83/Utilities/blob/master/XorShift64.cs
 
-const uint64 XOR64_OFFSET = 13726359678912485784UL;
 typedef struct _xor64
 {
     uint64 seed;
