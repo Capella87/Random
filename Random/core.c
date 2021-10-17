@@ -24,7 +24,7 @@ int calcRand(int min, int max, int iteration)
     {
         output = rand() % (max + 1 - min) + min;
         printf("%*d ", digit, output);
-        if (i % 10 == 0)
+        if (i % COLCOUNT == 0)
             printf("   | %0*d\n", iterDigit, i);
     }
     putchar('\n');

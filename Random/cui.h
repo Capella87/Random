@@ -15,6 +15,7 @@
 #define YEAR            2021
 #define VERSION         "1.2.1"
 #define RELEASE_DATE    "Apr 22, 2021"
+#define COLCOUNT 10
 
 typedef int Digit;
 typedef unsigned long long uint64;
