@@ -17,28 +17,28 @@ int noArgExecution(void)
     while (1)
     {
         puts("Type number range: ");
-        printf("From >> ");
+        printf("Start > ");
         while (scanf("%llu", &min) != 1 || min < 0)
         {
             bufferFlush();
             printf("ERROR! Type only a natural number or zero!\n\a");
-            printf("From >> ");
+            printf("Start > ");
         }
-        printf("To >> ");
+        printf("Stop > ");
         while (scanf("%llu", &max) != 1 || max == 0)
         {
             bufferFlush();
             printf("ERROR! Type only a natural number!\n\a");
-            printf("To >> ");
+            printf("Stop > ");
         }
 
         puts("How many randomized numbers?: ");
-        printf(">> ");
+        printf("> ");
         while (scanf("%d", &count) != 1)
         {
             bufferFlush();
             printf("ERROR! Type correct number!\n\a");
-            printf(">> ");
+            printf("> ");
         }
         bufferFlush();
         randXor64(min, max, count, unsorted);
