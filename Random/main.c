@@ -8,8 +8,7 @@ Developed by Capella87
 
 Copyright (c) 2018-2021 Capella87
 
-Random version : 1.2.1
-Release date : Apr 22, 2021
+See cui.h to check version. It's moved there.
 First commit date : Feb 24, 2018
 Initial version release date : Feb 22, 2018
 
