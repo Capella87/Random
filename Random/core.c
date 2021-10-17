@@ -8,7 +8,7 @@
 int calcRand(int min, int max, int iteration)
 {
     int output;
-    Digit digit = alignment(max);
+    Digit digit = alignment((uint64)max);
     Digit iterDigit = alignment(iteration);
 
     if (iteration == 0) return -1;

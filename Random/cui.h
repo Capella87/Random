@@ -17,14 +17,14 @@
 #define RELEASE_DATE    "Apr 22, 2021"
 
 typedef int Digit;
+typedef unsigned long long uint64;
 
 int noArgExecution(void);
 void bufferFlush(void);
 void intro(void);
 void showVersion(void);
 void showHelp(void);
-Digit alignment(int);
-
+Digit alignment(const uint64);
 
 
 #endif

@@ -84,9 +84,9 @@ void showHelp(void)
     puts("\n\n\n");
 }
 
-Digit alignment(int max)
+Digit alignment(const uint64 max)
 {
-    return (Digit)floor(log10(max) + 1);
+    return max ? (Digit)floor(log10((double)max) + 1) : 1;
 }
 
 // Flush all unneeded leftovers from buffer to prevent next input interference.
