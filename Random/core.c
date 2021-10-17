@@ -9,7 +9,7 @@ int calcRand(int min, int max, int iteration)
 {
     int output;
     Digit digit = alignment((uint64)max);
-    Digit iterDigit = alignment(iteration);
+    Digit iterDigit = alignment((uint64)iteration);
 
     if (iteration == 0) return -1;
     if (max > RAND_MAX)
