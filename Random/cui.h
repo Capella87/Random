@@ -19,6 +19,7 @@
 
 typedef int Digit;
 typedef unsigned long long uint64;
+typedef enum _sortOptions { sorted, unsorted } SortOpt;
 
 int noArgExecution(void);
 void bufferFlush(void);

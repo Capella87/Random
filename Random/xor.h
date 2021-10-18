@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include "cui.h"
 
-typedef enum _sortOptions { sorted, unsorted } SortOpt;
 static const uint64 XOR64_OFFSET = 13726359678912485784UL;
 
 // ref: https://github.com/Bunny83/Utilities/blob/master/XorShift64.cs
