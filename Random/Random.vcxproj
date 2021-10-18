@@ -78,6 +78,7 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>rand</TargetName>
     <EmbedManifest>true</EmbedManifest>
+    <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -109,10 +110,15 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <SetChecksum>true</SetChecksum>
     </Link>
     <Manifest>
       <UpdateFileHashes>true</UpdateFileHashes>
       <GenerateCatalogFiles>true</GenerateCatalogFiles>
+      <AdditionalManifestFiles>$(MSBuildProjectDirectory)\rand.manifest</AdditionalManifestFiles>
+      <InputResourceManifests>
+      </InputResourceManifests>
+      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -164,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="rand.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="rand.manifest" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
