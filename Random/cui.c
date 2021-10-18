@@ -32,7 +32,7 @@ int noArgExecution(void)
             printf("Stop > ");
         }
 
-        puts("How many random numbers?: ");
+        puts("How many random numbers ?");
         printf("> ");
         while (scanf("%d", &count) != 1)
         {
@@ -43,7 +43,7 @@ int noArgExecution(void)
         bufferFlush();
         randXor64(min, max, count, unsorted);
         puts("Do you want to try again ?\a");
-        printf("Type exit to STOP program\n");
+        printf("Type 'exit' to STOP program\n");
         printf(">> ");
         scanf("%[^\n]", iterAnswer);
         bufferFlush();
@@ -79,8 +79,7 @@ void showHelp(void)
     
     printf("usage: rand <command> [<options>]\n\n");
     puts("Commands");
-    puts("    generate\t\tGenerate random numbers. You can use option for conditions");
-    puts("    config\t\tAdjust configurations");
+    puts("    gen\t\tGenerate random numbers. You can use option for conditions");
 
     puts("\n\n\n");
 }
