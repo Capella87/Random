@@ -110,7 +110,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <SetChecksum>true</SetChecksum>
+      <SetChecksum>false</SetChecksum>
     </Link>
     <Manifest>
       <UpdateFileHashes>true</UpdateFileHashes>
@@ -118,7 +118,7 @@
       <AdditionalManifestFiles>$(MSBuildProjectDirectory)\rand.manifest</AdditionalManifestFiles>
       <InputResourceManifests>
       </InputResourceManifests>
-      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
