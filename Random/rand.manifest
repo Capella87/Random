@@ -6,6 +6,9 @@
       <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}"/>
       <!-- Windows 11 test -->
       <maxversiontested Id="10.0.22000.194"/>
+      <windowsSettings>
+        <activeCodePage xmlns="http://schemas.microsoft.com/SMI/2019/WindowsSettings">UTF-8</activeCodePage>
+      </windowsSettings>
     </application>
   </compatibility>
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
