@@ -20,6 +20,8 @@ jobs:
 
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.3
+      with:
+        vswhere-path: 'C:\Program Files\Microsoft Visual Studio\2022\Preview'
 
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
