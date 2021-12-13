@@ -59,7 +59,7 @@ void intro(void)
     puts("Random - Generate random numbers quickly!");
     printf("Developed by Capella87.\n");
     printf("%s | %s\n", VERSION, RELEASE_DATE);
-    printf("Copyright (c) 2018-%d Capella87\n", YEAR);
+    printf("Copyright (c) 2018, 2021-2022 Capella87\n");
     puts("This software is distributed under MIT License. See LICENSE for more details.");
     puts("Repo: https://github.com/Capella87/Random");
     puts("---------------------------------------------\n");
@@ -67,16 +67,15 @@ void intro(void)
 
 void showVersion(void)
 {
-    printf("Random version %s (%s)\n", VERSION, RELEASE_DATE);
-    puts("https://github.com/Capella87/Random");
+    printf("Random %s (%s)\n", VERSION, RELEASE_DATE);
+    puts("Repo: https://github.com/Capella87/Random");
 }
 
 void showHelp(void)
 {
-    printf("Random version %s (%s)\n", VERSION, RELEASE_DATE);
-    printf("Copyright (c) 2018-%d Capella87.\n", YEAR);
-    printf("https://github.com/Capella87/Random \n\n");
-    
+    showVersion();
+    printf("Copyright (c) 2018, 2021-2022 Capella87\n");
+
     printf("usage: rand <command> [<options>]\n\n");
     puts("Commands");
     puts("    gen\t\tGenerate random numbers. You can use option for conditions");

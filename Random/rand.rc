@@ -78,13 +78,13 @@ BEGIN
         BLOCK "040004b0"
         BEGIN
             VALUE "CompanyName", "Capella87"
-            VALUE "FileDescription", "Random number generator"
-            VALUE "FileVersion", "2.0.0-alpha-1"
+            VALUE "FileDescription", "Random"
+            VALUE "FileVersion", "2.0.0-alpha-2"
             VALUE "InternalName", "Random.exe"
-            VALUE "LegalCopyright", "Copyright (C) 2018-2021 Capella87"
+            VALUE "LegalCopyright", "Copyright (C) 2018, 2021-2022 Capella87"
             VALUE "OriginalFilename", "Random.exe"
             VALUE "ProductName", "Random"
-            VALUE "ProductVersion", "2.0.0-alpha-1"
+            VALUE "ProductVersion", "2.0.0-alpha-2"
         END
     END
     BLOCK "VarFileInfo"
