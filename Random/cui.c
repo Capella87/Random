@@ -56,12 +56,12 @@ int noArgExecution(void)
 
 void intro(void)
 {
-    puts("Random - Generate randomized numbers quickly!");
+    puts("Random - Generate random numbers quickly!");
     printf("Developed by Capella87.\n");
     printf("%s | %s\n", VERSION, RELEASE_DATE);
     printf("Copyright (c) 2018-%d Capella87\n", YEAR);
-    puts("This software is distributed under MIT License. See LICENSE at the root directory for more details.");
-    puts("https://github.com/Capella87/Random");
+    puts("This software is distributed under MIT License. See LICENSE for more details.");
+    puts("Repo: https://github.com/Capella87/Random");
     puts("---------------------------------------------\n");
 }
 
