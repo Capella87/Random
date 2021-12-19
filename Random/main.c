@@ -38,12 +38,13 @@ int main(int argc, char** argv)
 {
     if (argc == 2 && (strcmp(argv[1], "--version") == 0 || strcmp(argv[1], "-v") == 0))
     {
-        showVersion();
+        show_version();
         exit(EXIT_SUCCESS);
     }
     else if (argc == 2 && strcmp(argv[1], "--help") == 0)
     {
-        showHelp();
+        show_version();
+        show_help();
         exit(EXIT_SUCCESS);
     }
     else if (argc >= 2 && !strcmp(argv[1], "gen"))
@@ -107,12 +108,12 @@ int main(int argc, char** argv)
         }
         if (min >= max) goto error_range;
         printf("\a");
-        randXor64(min, max, d_count, unsorted);
+        rand_xor64(min, max, d_count, unsorted);
 
     }
     else if (argc == 1)
     {
-        return noArgExecution();
+        return interactive_mode();
     }
     else
     {

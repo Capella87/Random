@@ -16,10 +16,10 @@ typedef struct _xor64
     int count;
 } Xor64;
 
-void initXor64(Xor64* t);
-uint64 getXor64(Xor64* t);
-uint64 getXor64Num(Xor64* t, uint64 min, uint64 max);
-bool randXor64(uint64 min, uint64 max, const int count, SortOpt op);
-void resetXor64Seed(Xor64* t);
+void init_xor64(Xor64* t);
+uint64 get_xor64(Xor64* t);
+uint64 get_xor64_num(Xor64* t, uint64 min, uint64 max);
+bool rand_xor64(uint64 min, uint64 max, const int count, SortOpt op);
+void reset_xor64_seed(Xor64* t);
 
 #endif

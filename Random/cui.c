@@ -7,7 +7,7 @@
 #include "core.h"
 #include "xor.h"
 
-int noArgExecution(void)
+int interactive_mode(void)
 {
     uint64 max, min;
     int count;
@@ -20,14 +20,14 @@ int noArgExecution(void)
         printf("Start > ");
         while (scanf("%llu", &min) != 1 || min < 0)
         {
-            bufferFlush();
+            flush_buffer();
             printf("ERROR! Type only a natural number or zero!\n\a");
             printf("Start > ");
         }
         printf("Stop > ");
         while (scanf("%llu", &max) != 1 || max == 0)
         {
-            bufferFlush();
+            flush_buffer();
             printf("ERROR! Type only a natural number!\n\a");
             printf("Stop > ");
         }
@@ -36,17 +36,17 @@ int noArgExecution(void)
         printf("> ");
         while (scanf("%d", &count) != 1)
         {
-            bufferFlush();
+            flush_buffer();
             printf("ERROR! Type correct number!\n\a");
             printf("> ");
         }
-        bufferFlush();
-        randXor64(min, max, count, unsorted);
+        flush_buffer();
+        rand_xor64(min, max, count, unsorted);
         puts("Do you want to try again ?\a");
         printf("Type 'exit' to STOP program\n");
         printf(">> ");
         scanf("%[^\n]", iterAnswer);
-        bufferFlush();
+        flush_buffer();
         if (!strcmp(iterAnswer, "exit")) break;
     }
 
@@ -65,15 +65,14 @@ void intro(void)
     puts("---------------------------------------------\n");
 }
 
-void showVersion(void)
+void show_version(void)
 {
     printf("Random %s (%s)\n", VERSION, RELEASE_DATE);
     puts("Repo: https://github.com/Capella87/Random");
 }
 
-void showHelp(void)
+void show_help(void)
 {
-    showVersion();
     printf("Copyright (c) 2018, 2021-2022 Capella87\n");
 
     printf("usage: rand <command> [<options>]\n\n");
@@ -89,22 +88,22 @@ Digit alignment(const uint64 max)
 }
 
 // Flush all unneeded leftovers from buffer to prevent next input interference.
-void bufferFlush(void)
+void flush_buffer(void)
 {
     while (getchar() != '\n')
         continue;
 }
 
-void printInt64Result(uint64* result, const int count, const uint64 max)
+void print_int64_result(uint64* result, const int count, const uint64 max)
 {
     Digit digit = alignment((uint64)max);
-    Digit iterDigit = alignment((uint64)count);
+    Digit iteration_digit = alignment((uint64)count);
 
     for (int i = 0; i < count; i++)
     {
         printf("%*llu ", digit, result[i]);
         if ((i + 1) % COLCOUNT == 0)
-            printf("   | %0*d\n", iterDigit, i + 1);
+            printf("   | %0*d\n", iteration_digit, i + 1);
     }
     putchar('\n');
     return;

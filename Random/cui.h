@@ -21,13 +21,13 @@ typedef int Digit;
 typedef unsigned long long uint64;
 typedef enum _sortOptions { sorted, unsorted } SortOpt;
 
-int noArgExecution(void);
-void bufferFlush(void);
+int interactive_mode(void);
+void flush_buffer(void);
 void intro(void);
-void showVersion(void);
-void showHelp(void);
+void show_version(void);
+void show_help(void);
 Digit alignment(const uint64 maxNum);
-void printInt64Result(uint64* result, const int count, const uint64 max);
+void print_int64_result(uint64* result, const int count, const uint64 max);
 
 
 #endif
