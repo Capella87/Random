@@ -76,10 +76,16 @@ void show_help(void)
     printf("Copyright (c) 2018, 2021-2022 Capella87\n");
 
     printf("usage: rand <command> [<options>]\n\n");
-    puts("Commands");
+    puts("Commands:");
     puts("    gen\t\tGenerate random numbers. You can use option for conditions");
 
-    puts("\n\n\n");
+    puts("\nOptions for 'gen':");
+    puts("    --count <uint64>\tOutput count. In default, It is set to 1.");
+    puts("    --max   <uint64>\tSet Max number. In default, It is set to the maximum of unsigned long long.");
+    puts("    --min   <uint64>\tSet Min number. In defualt, It is set to zero.");
+    puts("    --algo  <algorithm>\t Set Generation algorithm. In default, It is set to XORShift.");
+
+    putchar('\n');
 }
 
 Digit alignment(const uint64 max)
